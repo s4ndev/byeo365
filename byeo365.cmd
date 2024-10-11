@@ -1,1 +1,3 @@
-test
+echo TEST
+pause
+cls
