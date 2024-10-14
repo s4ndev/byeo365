@@ -49,14 +49,14 @@ if '%Choice%'=='2' goto full
 curl -O https://raw.githubusercontent.com/s4ndev/byeo365/refs/heads/main/assets/scripts.zip
 powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('scripts.zip', 'scripts'); }"
 
-del %localappdata%/Microsoft/OneAuth
-del %localappdata%/Microsoft/IdentityCache
+del "%localappdata%/Microsoft/OneAuth"
+del "%localappdata%/Microsoft/IdentityCache"
 
 cd scripts
 cscript OLicenseCleanup.vbs
-call WPJCleanup.cmd
+call "WPJCleanUp/WPJCleanup.cmd"
 
-"C:\Program Files\Microsoft Office 15\ClientX64\OfficeClickToRun.exe" scenario=Repair platform=x86 culture=en-us RepairType=QuickRepair DisplayLevel=True
+"C:\Program Files\Microsoft Office 15\ClientX64\OfficeClickToRun.exe" scenario=Repair platform=x64 culture=en-us RepairType=QuickRepair DisplayLevel=True
 
 :full
 pause
