@@ -1,5 +1,6 @@
 @echo off
 setlocal DisableDelayedExpansion
+for /f "tokens=*" %%i in ('powershell -command "[System.Environment]::GetFolderPath('LocalApplicationData')"') do set localappdata=%%i
 
 
 ::=========================================================================================================================================
