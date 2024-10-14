@@ -52,10 +52,11 @@ powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compressi
 del %localappdata%/Microsoft/OneAuth
 del %localappdata%/Microsoft/IdentityCache
 
-cscript scripts/OLicenseCleanup.vbs
-call scripts/WPJCleanup.cmd
+cd scripts
+cscript OLicenseCleanup.vbs
+call WPJCleanup.cmd
 
-C:\Program Files\Microsoft Office 15\ClientX64\OfficeClickToRun.exe" scenario=Repair platform=x86 culture=en-us RepairType=QuickRepair DisplayLevel=True
+"C:\Program Files\Microsoft Office 15\ClientX64\OfficeClickToRun.exe" scenario=Repair platform=x86 culture=en-us RepairType=QuickRepair DisplayLevel=True
 
 :full
 pause
