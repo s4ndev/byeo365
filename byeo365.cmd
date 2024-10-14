@@ -50,8 +50,8 @@ if '%Choice%'=='2' goto full
 curl -O https://raw.githubusercontent.com/s4ndev/byeo365/refs/heads/main/assets/scripts.zip
 powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('scripts.zip', 'scripts'); }"
 
-del "%localappdata%/Microsoft/OneAuth"
-del "%localappdata%/Microsoft/IdentityCache"
+del /Q "%localappdata%/Microsoft/OneAuth"
+del /Q "%localappdata%/Microsoft/IdentityCache"
 
 cd scripts
 cscript OLicenseCleanup.vbs
